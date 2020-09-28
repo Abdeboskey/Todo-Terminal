@@ -1,5 +1,6 @@
 import classes from './TodoMaker.module.scss'
 import React, { useState } from 'react'
+import { DateTime } from 'luxon'
 
 const TodoMaker = ({ addTodo }) => {
   const [ input, setInput ] = useState('')
@@ -10,7 +11,10 @@ const TodoMaker = ({ addTodo }) => {
     if (!input) {
       setError('Enter Text Here')
     } else {
-      addTodo(input)
+      addTodo({
+        todo: input,
+        dateTime: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
+      })
       setInput('')
       setError('')
     }
