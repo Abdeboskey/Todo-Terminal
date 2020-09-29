@@ -9,6 +9,20 @@ const App = () => {
   const addTodo = newTodo => {
     setTodos([...todos, newTodo])
   }
+  
+  const saveTodo = todo => {
+    let todos = getFromLocalStorage('savedTodos')
+    if (todos === null) {
+      todos = [todo]
+      localStorage.setItem('savedTodos', JSON.stringify(todos))
+      setTodos([...todos, todo])
+    } else {
+      todos = JSON.parse(todos)
+      todos.push(todo) // maybe this can just go in the stringify
+      localStorage.setItem('savedTodos', JSON.stringify(todos))
+      setTodos([...todos, todo])
+    }
+  }
 
   return (
     <main className="App">
