@@ -6,17 +6,21 @@ const TodoMaker = ({ addTodo }) => {
   const [ input, setInput ] = useState('')
   const [ error, setError ] = useState('')
 
-  const createTodo = event => {
-    event.preventDefault()
+  const makeNewTodo = () => {
+    addTodo({
+      todo: input,
+      timeStamp: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
+    })
+    setInput('')
+    setError('')
+  }
+
+  const createTodo = e => {
+    e.preventDefault()
     if (!input) {
       setError('Enter Text Here')
     } else {
-      addTodo({
-        todo: input,
-        dateTime: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
-      })
-      setInput('')
-      setError('')
+      makeNewTodo()
     }
   }
 
