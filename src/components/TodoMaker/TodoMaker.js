@@ -2,18 +2,9 @@ import classes from './TodoMaker.module.scss'
 import React, { useState } from 'react'
 import { DateTime } from 'luxon'
 
-const TodoMaker = ({ addTodo }) => {
+const TodoMaker = ({ saveTodo }) => {
   const [ input, setInput ] = useState('')
   const [ error, setError ] = useState('')
-
-  const makeNewTodo = () => {
-    addTodo({
-      todo: input,
-      timeStamp: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
-    })
-    setInput('')
-    setError('')
-  }
 
   const createTodo = e => {
     e.preventDefault()
@@ -22,6 +13,15 @@ const TodoMaker = ({ addTodo }) => {
     } else {
       makeNewTodo()
     }
+  }
+
+  const makeNewTodo = () => {
+    saveTodo({
+      todo: input,
+      timeStamp: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
+    })
+    setInput('')
+    setError('')
   }
 
   return (
