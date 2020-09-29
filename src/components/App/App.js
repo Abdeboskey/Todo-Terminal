@@ -5,28 +5,23 @@ import './App.scss';
 
 const App = () => {
   const [ todos, setTodos ] = useState([])
-
-  const addTodo = newTodo => {
-    setTodos([...todos, newTodo])
-  }
   
   const saveTodo = todo => {
-    let todos = getFromLocalStorage('savedTodos')
+    let todos = localStorage.getItem('savedTodos')
     if (todos === null) {
-      todos = [todo]
-      localStorage.setItem('savedTodos', JSON.stringify(todos))
-      setTodos([...todos, todo])
+      setTodos([todo])
+      localStorage.setItem('savedTodos', JSON.stringify([todo]))
     } else {
       todos = JSON.parse(todos)
       todos.push(todo) // maybe this can just go in the stringify
       localStorage.setItem('savedTodos', JSON.stringify(todos))
-      setTodos([...todos, todo])
+      setTodos([...todos])
     }
   }
 
   return (
     <main className="App">
-      <TodoMaker addTodo={addTodo} />
+      <TodoMaker saveTodo={saveTodo} />
       <TodoList todos={todos} />
     </main>
   );
