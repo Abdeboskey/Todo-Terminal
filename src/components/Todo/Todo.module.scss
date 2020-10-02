@@ -1,0 +1,11 @@
+@import '../../styles/shared.scss';
+
+.TodoCard {
+  h2 {
+    font-size: 2em;
+  }
+}
+
+.button {
+  @include btn-style;
+}
