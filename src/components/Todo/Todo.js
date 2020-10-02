@@ -5,7 +5,7 @@ const Todo = ({ todo }) => {
   return (
     <div className={classes.TodoCard}>
       <h2>{todo.todo[0].toUpperCase() + todo.todo.substring(1) + '.'}</h2>
-      <p>Added: {todo.timeStamp}</p>
+      <p className={classes.timeStamp}>Added: {todo.timeStamp}</p>
       <button className={classes.button}>Complete</button>
     </div>
   )
