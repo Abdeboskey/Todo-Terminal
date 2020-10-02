@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TodoList from '../TodoList/TodoList'
-import TodoMaker from '../TodoMaker/TodoMaker';
-import './App.scss';
+import TodoMaker from '../TodoMaker/TodoMaker'
+import './App.scss'
 
 const App = () => {
   const [ todos, setTodos ] = useState([])
+
+  useEffect(() => {
+    let loadTodos = localStorage.getItem('savedTodos')
+    if (loadTodos !== null ) {
+      setTodos([...JSON.parse(loadTodos)])
+    }
+  }, [todos.length])
   
   const saveTodo = todo => {
     let todos = localStorage.getItem('savedTodos')
