@@ -1,5 +1,5 @@
 # To-Do Terminal
-This is a to-to list application built in React, using React Hooks to manage state. This was built as pre-work for the 4th module of Turing School of software and design's Front End Engineering program. 
+This is a to-to list application built in React JS, using React Hooks to manage state. This was built as pre-work for the 4th module of Turing School of Software and Design's Front End Engineering program. 
 
 ## Setup
 
