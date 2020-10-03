@@ -39,7 +39,7 @@ const App = () => {
       <TodoMaker saveTodo={saveTodo} />
       <TodoList todos={todos} completeTodo={completeTodo} />
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
