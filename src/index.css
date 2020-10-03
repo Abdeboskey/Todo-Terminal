@@ -1,6 +1,8 @@
+@import '../src/styles/shared.scss';
+
 body {
   margin: 0;
-  font-family: -apple-system, Computerfont, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, Computerfont, monospace, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
