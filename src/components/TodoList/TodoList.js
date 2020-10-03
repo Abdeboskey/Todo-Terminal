@@ -7,7 +7,7 @@ const TodoList = ({ todos }) => {
 
   return (
     <section className={classes.TodoList}>
-      {allTodos.reverse() || <h2>You have not added any todos</h2>}
+      {allTodos.reverse()}
     </section>
   )
 }
