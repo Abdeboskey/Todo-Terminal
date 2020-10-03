@@ -6,13 +6,15 @@ import './App.scss'
 const App = () => {
   const [ todos, setTodos ] = useState([])
 
-  useEffect(() => {
+  useEffect(() => getTodos(), [todos.length])
+  
+  const getTodos = () => {
     let loadTodos = localStorage.getItem('savedTodos')
     if (loadTodos !== null ) {
       setTodos([...JSON.parse(loadTodos)])
     }
-  }, [todos.length])
-  
+  }
+
   const saveTodo = todo => {
     let todos = localStorage.getItem('savedTodos')
     if (todos === null) {
