@@ -2,6 +2,7 @@ import classes from './TodoMaker.module.scss'
 import React, { useState } from 'react'
 import { DateTime } from 'luxon'
 // import { nanoid } from 'nanoid'
+// Use Date.now() instead of nanoid, as nanoid is not yet supported in react-testing-library
 
 const TodoMaker = ({ saveTodo }) => {
   const [ input, setInput ] = useState('')
@@ -18,7 +19,7 @@ const TodoMaker = ({ saveTodo }) => {
 
   const makeNewTodo = () => {
     saveTodo({
-      id: Date.now(), // Use Date.now() instead of nanoid, as nanoid is not yet supported in react-testing-library
+      id: Date.now(), 
       todo: input, 
       timeStamp: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
     })
