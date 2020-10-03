@@ -26,10 +26,16 @@ const App = () => {
     }
   }
 
+  const completeTodo = id => {
+    const notComplete = todos.filter(todo => todo.id !== id)
+    localStorage.setItem('savedTodos', JSON.stringify(notComplete))
+    setTodos([...notComplete])
+  }
+
   return (
     <main className="App">
       <TodoMaker saveTodo={saveTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} completeTodo={completeTodo} />
     </main>
   );
 }
