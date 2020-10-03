@@ -1,6 +1,7 @@
 import classes from './TodoMaker.module.scss'
 import React, { useState } from 'react'
 import { DateTime } from 'luxon'
+import { nanoid } from 'nanoid'
 
 const TodoMaker = ({ saveTodo }) => {
   const [ input, setInput ] = useState('')
@@ -17,6 +18,7 @@ const TodoMaker = ({ saveTodo }) => {
 
   const makeNewTodo = () => {
     saveTodo({
+      id: nanoid(),
       todo: input,
       timeStamp: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
     })
