@@ -20,7 +20,7 @@ const App = () => {
       localStorage.setItem('savedTodos', JSON.stringify([todo]))
     } else {
       todos = JSON.parse(todos)
-      todos.push(todo) // maybe this can just go in the stringify
+      todos.push(todo)
       localStorage.setItem('savedTodos', JSON.stringify(todos))
       setTodos([...todos])
     }
