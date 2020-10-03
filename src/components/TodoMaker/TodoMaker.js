@@ -20,7 +20,7 @@ const TodoMaker = ({ saveTodo }) => {
   const makeNewTodo = () => {
     saveTodo({
       id: Date.now(), 
-      todo: input, 
+      todo: input.trim(), 
       timeStamp: DateTime.local().toLocaleString(DateTime.DATETIME_MED),
     })
     setInput('')
