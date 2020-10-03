@@ -34,4 +34,19 @@ describe('TodoMaker', () => {
 
     expect(input.value).toEqual('test the form')
   })
+  
+  it('should not allow the user to create a todo if the input is empty', () => {
+    const mockSaveTodo = jest.fn()
+    const { getByRole, getByPlaceholderText } = render(
+      <>
+        <TodoMaker saveTodo={mockSaveTodo} />
+      </>
+    )
+
+    const makeTodoButton = getByRole('button', { name: /make to-do/i })
+    fireEvent.click(makeTodoButton)
+    const errorMessage = getByPlaceholderText(/enter text here/i)
+
+    expect(errorMessage).toBeInTheDocument()
+  })
 })
