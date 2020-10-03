@@ -13,4 +13,4 @@ This is a to-to list application built in React JS, using React Hooks to manage 
 
 ## Application Information
 
-This application is currently set up to store your to-dos in `localStorage`. If you have used this application before, any previously created to-dos will be retrieved from `localStorage` upon launching the application. I have found that using to-do lists like this really helps me manage my productivity, and I plan on building a back end and server to deploy this application, as an opportunity to learn, practice, and share this with friends.
+This application is currently set up to store your to-dos in `localStorage`. If you have used this application before, any previously created to-dos will be retrieved from `localStorage` upon launching the application. I have found that using to-do lists like this really helps me manage my productivity, and I plan on building a back end and server to deploy this application as an opportunity to learn, practice, and share this tool with friends.
