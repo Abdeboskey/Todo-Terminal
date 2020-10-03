@@ -43,7 +43,7 @@ const TodoMaker = ({ saveTodo }) => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button className={classes.button}>Make Todo</button>
+      <button className={classes.button}>Make To-do</button>
     </form>
   )
 }
