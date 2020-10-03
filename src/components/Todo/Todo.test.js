@@ -1,6 +1,6 @@
 import React from 'react'
 import Todo from './Todo'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 describe('Todo', () => {
@@ -30,5 +30,20 @@ describe('Todo', () => {
     expect(todoHeader).toBeInTheDocument()
     expect(timeStamp).toBeInTheDocument()
     expect(completeButton).toBeInTheDocument()
+  })
+
+  it('should fire a method when the button is clicked', () => {
+    const mockCompleteTodo = jest.fn()
+    const { getByRole, getByText } = render(
+      <>
+        <Todo key="0" todo={todo} completeTodo={mockCompleteTodo} />
+      </>
+    )
+
+    const completeButton = getByRole('button', { name: /complete/i })
+    fireEvent.click(completeButton)
+
+    expect(mockCompleteTodo).toBeCalledTimes(1)
+    expect(mockCompleteTodo).toBeCalledWith(32487)
   })
 })
