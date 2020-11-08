@@ -1,5 +1,10 @@
 language: node_js
 node_js:
-  - "node"
+- node
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: OFgAo5CecDDLStmrVsYq85GJETdERBhcxP5DB5WcHUY/1ibfTP6XjImMe0c4oUgh6J4p7W/6riovtLtPdEcB9A1l2qCXzRNQ6g6dntwgnOMOGwcWttZJpOwKQ4u5+OVp3FvtrK2osFyM5EwOf+K0nZD5yD3ldddxk50z+48qUwxbo7a4N9+qJyoIQBsWkrY4Te3BZt6ZmCxQC+OA1GjrbEmynTRpwgK7KrEtY0p31TcRuwMIp920McZdiOPpCr3MT36UMoa+m1Xcxpfdtvvg41W3Q/o0TVBH+0ziUEFfqccjeXxOVjmg7T7jAblfVLAL4g51lEDQ3Kt1KJVOjb0+JVFgI8ZLzOqPpfOSjIFSuGpJZGf2l3xOwnsT6I4Ta3dMWbRs8TUIRGUQJGV629PkGNZN+dulV3x5sRMFolY0KAte4JvM/1D6bOM3nD8Khq3TMNIgscchH4hOwBVo9F6l0LhbWe8Z9T+OfJFSGDZGsY7n3pC2TDxB3Vp4aMfSC/7olZpWpBF/aaKARcaAJxb+mmTPa5AdFYjdNAVSid5q3S62Avv6IknkWxoACGFv2XPipetmtco9wD2Sp7/Au0NA4B2iD5v5gCs2aQLPYNX9eXXfMRFJd2dreWH/0Lj4gaWR1BaWI971bZNEI8PEwtLl5TcYtj01QmNsYEpktkjnQkk=
+  app: todo-terminal
